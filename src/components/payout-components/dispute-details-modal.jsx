@@ -27,7 +27,11 @@ export function DisputeDetailsModal({ dispute, onClose }) {
 
   return (
     <div
-      className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50"
+      style={{
+        backgroundColor: "rgba(0, 0, 0, 0.5)",
+        backdropFilter: "blur(5px)"
+      }}
+      className="fixed inset-0  flex items-center justify-center p-4 z-50"
       onClick={handleBackdropClick}
     >
       <div
@@ -76,9 +80,8 @@ export function DisputeDetailsModal({ dispute, onClose }) {
             <div className="w-1/2 text-gray-600">Status:</div>
             <div className="w-1/2">
               <span
-                className={`px-2 py-1 rounded-full text-xs ${
-                  dispute.status === "Resolved" ? "bg-green-100 text-green-800" : "bg-yellow-100 text-yellow-800"
-                }`}
+                className={`px-2 py-1 rounded-full text-xs ${dispute.status === "Resolved" ? "bg-green-100 text-green-800" : "bg-yellow-100 text-yellow-800"
+                  }`}
               >
                 {dispute.status}
               </span>
@@ -91,6 +94,6 @@ export function DisputeDetailsModal({ dispute, onClose }) {
           </div>
         </div>
       </div>
-    </div>
+    </div >
   )
 }

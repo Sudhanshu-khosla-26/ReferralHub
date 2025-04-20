@@ -31,7 +31,9 @@ export default function PlatformSetup() {
     const completed = localStorage.getItem("PlatformSetup")
 
     useEffect(() => {
-        navigate("/")
+        if (completed === "completed") {
+            navigate("/")
+        }
     }, [])
 
 

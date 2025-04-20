@@ -214,7 +214,7 @@ export default function Dashboard() {
             <Sidebar currentView={currentView} notifications={notifications} />
 
             <div className="flex-1 flex flex-col overflow-hidden">
-                <Header title="" />
+                <Header title="Manage and monitor your promoter referral activities" />
 
                 <main className="flex-1 overflow-y-auto bg-gray-50 p-4">
                     <AnimatePresence mode="wait">

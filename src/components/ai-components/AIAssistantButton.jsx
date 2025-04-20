@@ -33,7 +33,7 @@ export default function AIAssistantButton() {
   useEffect(() => {
     // Check if this is the first visit
     const hasVisited = localStorage.getItem("hasVisitedBefore")
-    if (!hasVisited && !tourCompleted) {
+    if (!hasVisited && !tourCompleted && pathname !== "/login" && pathname !== "/platform") {
       // Show tour after a short delay
       const timer = setTimeout(() => {
         setShowTour(true)
@@ -93,16 +93,8 @@ export default function AIAssistantButton() {
             </button>
 
             <div className="flex items-center mb-4">
-              <div className="w-12 h-12 rounded-full bg-blue-500 flex items-center justify-center text-white mr-4">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-6 w-6"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
+              <div className="max-w-12 w-fit h-12 rounded-full bg-blue-500 flex items-center justify-center text-white mr-4">
+                <img className="w-14 h-12" src="/ai.png" alt="" />
               </div>
               <div>
                 <h3 className="text-lg font-semibold">AI Agent</h3>
