@@ -69,7 +69,6 @@ function SidebarItem({ item, isActive }) {
             to={completed === "completed" ? item.link : "#"}
             className={`flex items-center px-3 py-2 text-sm font-medium rounded-md cursor-pointer transition-colors ${isActive ? "bg-blue-50 text-blue-600" : "text-gray-600 hover:bg-gray-100"
                 }`}
-
         >
             <div className="mr-3">
                 <img src={`/assets/${item.icon}`} alt="" />

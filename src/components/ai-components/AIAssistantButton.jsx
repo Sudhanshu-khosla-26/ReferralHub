@@ -3,7 +3,8 @@ import { useState, useEffect } from "react"
 import { MessageSquare, X } from "lucide-react"
 import AIAssistantPopup from "./AIAssistantPopup"
 import { useLocation } from "react-router-dom"
-import { img } from "framer-motion/client"
+import { motion } from "framer-motion"
+
 
 export default function AIAssistantButton() {
   const [isOpen, setIsOpen] = useState(false)
@@ -32,13 +33,12 @@ export default function AIAssistantButton() {
 
   useEffect(() => {
     // Check if this is the first visit
-    const completed = localStorage.getItem("PlatformSetup")
     const hasVisited = localStorage.getItem("hasVisitedBefore")
-    if (completed === "completed" && hasVisited !== "true") {
+    if (!hasVisited && !tourCompleted && pathname === "/") {
 
       const timer = setTimeout(() => {
         setShowTour(true)
-      }, 1500)
+      }, 1000)
 
       return () => clearTimeout(timer)
     }
