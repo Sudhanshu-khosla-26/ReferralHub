@@ -32,9 +32,10 @@ export default function AIAssistantButton() {
 
   useEffect(() => {
     // Check if this is the first visit
+    const completed = localStorage.getItem("PlatformSetup")
     const hasVisited = localStorage.getItem("hasVisitedBefore")
-    if (!hasVisited && !tourCompleted && pathname !== "/login" && pathname !== "/platform") {
-      // Show tour after a short delay
+    if (completed === "completed" && hasVisited !== "true") {
+
       const timer = setTimeout(() => {
         setShowTour(true)
       }, 1500)
