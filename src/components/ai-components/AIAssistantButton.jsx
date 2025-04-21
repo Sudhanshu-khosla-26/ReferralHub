@@ -34,7 +34,7 @@ export default function AIAssistantButton() {
   useEffect(() => {
     // Check if this is the first visit
     const hasVisited = localStorage.getItem("hasVisitedBefore")
-    if (!hasVisited && !tourCompleted && pathname === "/") {
+    if (!hasVisited && !tourCompleted && pathname === "/aiagent") {
 
       const timer = setTimeout(() => {
         setShowTour(true)
