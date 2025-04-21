@@ -351,7 +351,7 @@ export default function CampaignStep({ data, setData, onNext, isLastStep }) {
       </div>
 
       <div className="pt-4">
-        <Button onClick={() => { onNext(), localStorage.setItem("PlatformSetup", "completed"), navigate("/") }} variant={isLastStep ? "success" : "primary"} className="w-full">
+        <Button onClick={() => { onNext(), localStorage.setItem("PlatformSetup", "completed"), navigate("/aiagent") }} variant={isLastStep ? "success" : "primary"} className="w-full">
           {isLastStep ? "Launch" : "Next"}
         </Button>
       </div>
