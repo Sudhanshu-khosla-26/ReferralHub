@@ -12,7 +12,7 @@ export default function AIAssistantButton() {
   const [tourStep, setTourStep] = useState(1)
   const [tourCompleted, setTourCompleted] = useState(false)
   const location = useLocation()
-  const [pathname, setPathname] = useState(location.pathname)
+  const [pathname, setPathname] = useState(location.pathname || null)
 
   useEffect(() => {
     // Set the current pathname
@@ -26,15 +26,19 @@ export default function AIAssistantButton() {
     if (pathname === "/campaign") return "campaign"
     if (pathname === "/promoters") return "customer"
     if (pathname === "/leads") return "leads"
-    if (pathname === "/ai-agent") return "ai-agent"
+    if (pathname === "/aiagent") return "ai-agent"
     if (pathname === "/payouts") return "payouts"
     return "dashboard"
   }
 
+  console.log("Current Path locationms:", location);
+  console.log("Current Path:", pathname);
+
   useEffect(() => {
     // Check if this is the first visit
+    const completed = localStorage.getItem("PlatformSetup")
     const hasVisited = localStorage.getItem("hasVisitedBefore")
-    if (!hasVisited && !tourCompleted && pathname === "/aiagent") {
+    if (!hasVisited && !tourCompleted && completed && pathname === "/") {
 
       const timer = setTimeout(() => {
         setShowTour(true)
@@ -42,7 +46,7 @@ export default function AIAssistantButton() {
 
       return () => clearTimeout(timer)
     }
-  }, [tourCompleted])
+  }, [tourCompleted, pathname])
 
   const handleTourNext = () => {
     if (tourStep < 5) {

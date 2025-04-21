@@ -25,7 +25,7 @@ function App() {
         <Route path="/login" element={<><Login /><AIAssistantButton /></>} />
         <Route path="/register" element={<><Register /><AIAssistantButton /></>} />
         <Route path="/platform" element={<><PlatformSetup /><AIAssistantButton /></>} />
-        <Route path="/aiagent" element={<><AIAgentChat /></>} />
+        <Route path="/aiagent" element={<AIAgentChat />} />
         <Route path="/Setting" element={<><SettingsPage /><AIAssistantButton /></>} />
         <Route path="/" element={<><Dashboard /><AIAssistantButton /></>} />
         <Route path="/payouts" element={<><Payout /><AIAssistantButton /></>} />
