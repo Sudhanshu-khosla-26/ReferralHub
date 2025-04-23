@@ -11,7 +11,7 @@ export default function ChatMessages({ messages, userProfile, isTyping }) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3 }}
-          className={`flex ${message.sender === "user" ? "justify-end" : "justify-start"}`}
+          className={`flex ${message.sender === "user" ? "justify-end items-center" : "justify-start items-center"}`}
         >
           {message.sender === "ai" && (
             <div className="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center mr-3 flex-shrink-0">

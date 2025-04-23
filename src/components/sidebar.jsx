@@ -24,12 +24,12 @@ export default function Sidebar({ currentStep }) {
     const location = useLocation();
 
 
-
     const platformSetup = (localStorage.getItem("PlatformSetup"))
     console.log(platformSetup);
     if (platformSetup === "completed") {
         menuItems = menuItems.filter((item) => item.id !== "platform-setup")
     }
+
     return (
         <div className="w-56 bg-white border-r border-gray-200 flex flex-col  h-[100vh] justify-between">
             {/* <div className="p-4 border-b border-gray-200"> */}
@@ -66,7 +66,7 @@ function SidebarItem({ item, isActive }) {
 
     return (
         <Link
-            to={completed === "completed" ? item.link : "#"}
+            to={item.link}
             className={`flex items-center px-3 py-2 text-sm font-medium rounded-md cursor-pointer transition-colors ${isActive ? "bg-blue-50 text-blue-600" : "text-gray-600 hover:bg-gray-100"
                 }`}
         >
